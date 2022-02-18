@@ -63,3 +63,4 @@ crashlytics-build.properties
 #ignore this file
 *VR-Test_01.3ds
 *Environment.fbx
+VR_Game_Development_Test/Assets/Sounds/big-crane-idle.wav

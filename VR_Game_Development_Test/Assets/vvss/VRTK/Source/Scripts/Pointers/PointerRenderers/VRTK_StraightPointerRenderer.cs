@@ -137,15 +137,13 @@ namespace VRTK
                 actualTracer.GetComponent<BoxCollider>().isTrigger = true;
                 actualTracer.AddComponent<Rigidbody>().isKinematic = true;
                 actualTracer.layer = LayerMask.NameToLayer("Ignore Raycast");
-                //actualTracer.AddComponent<CheckCollision>();
-
 
                 SetupMaterialRenderer(actualTracer);
             }
 
             actualTracer.transform.name = VRTK_SharedMethods.GenerateVRTKObjectName(true, gameObject.name, "StraightPointerRenderer_Tracer");
             actualTracer.transform.SetParent(actualContainer.transform);
-            //InteriorManager.Instance.vr_Tracer = actualTracer;
+
             VRTK_PlayerObject.SetPlayerObject(actualTracer, VRTK_PlayerObject.ObjectTypes.Pointer);
         }
 
@@ -161,7 +159,6 @@ namespace VRTK
                 actualCursor.transform.localScale = Vector3.one * (scaleFactor * cursorScaleMultiplier);
                 actualCursor.GetComponent<Collider>().isTrigger = true;
                 actualCursor.AddComponent<Rigidbody>().isKinematic = true;
-
                 actualCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
 
                 SetupMaterialRenderer(actualCursor);
@@ -170,7 +167,6 @@ namespace VRTK
             cursorOriginalScale = actualCursor.transform.localScale;
             actualCursor.transform.name = VRTK_SharedMethods.GenerateVRTKObjectName(true, gameObject.name, "StraightPointerRenderer_Cursor");
             actualCursor.transform.SetParent(actualContainer.transform);
-           // InteriorManager.Instance.vr_Cursor = actualCursor;
             VRTK_PlayerObject.SetPlayerObject(actualCursor, VRTK_PlayerObject.ObjectTypes.Pointer);
         }
 
